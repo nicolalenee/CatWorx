@@ -19,3 +19,4 @@
 /Users/nicolamarble/Desktop/projects/CatWorx/CatWorx.BadgeMaker/bin/Debug/net6.0/runtimes/win-x64/native/libSkiaSharp.dll
 /Users/nicolamarble/Desktop/projects/CatWorx/CatWorx.BadgeMaker/bin/Debug/net6.0/runtimes/win-x86/native/libSkiaSharp.dll
 /Users/nicolamarble/Desktop/projects/CatWorx/CatWorx.BadgeMaker/obj/Debug/net6.0/CatWorx.BadgeMaker.csproj.CopyComplete
+/Users/nicolamarble/Desktop/projects/CatWorx/CatWorx.BadgeMaker/bin/Debug/net6.0/Newtonsoft.Json.dll
