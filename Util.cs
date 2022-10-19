@@ -40,7 +40,6 @@ namespace CatWorx.BadgeMaker
     }
     async public static Task MakeBadges(List<Employee> employees)
     {
-      // create the canvas that we'll use to make the badge
       //LAYOUT VARIABLES
       int BADGE_WIDTH = 669;
       int BADGE_HEIGHT = 1044;
@@ -50,6 +49,11 @@ namespace CatWorx.BadgeMaker
       int PHOTO_RIGHT_X = 486;
       int PHOTO_BOTTOM_Y = 517;
 
+      int COMPANY_NAME_Y = 150;
+
+      int EMPLOYEE_NAME_Y = 600;
+
+      int EMPLOYEE_ID_Y = 730;
 
       // create image. instance of HttpClient is disposed after code in black has run
       using(HttpClient client = new HttpClient())
@@ -65,13 +69,28 @@ namespace CatWorx.BadgeMaker
           canvas.DrawImage(background, new SKRect(0, 0, BADGE_WIDTH, BADGE_HEIGHT));
           canvas.DrawImage(photo, new SKRect(PHOTO_LEFT_X, PHOTO_TOP_Y, PHOTO_RIGHT_X, PHOTO_BOTTOM_Y));
 
+          //Arguments for SKPaint object constructor
+          SKPaint paint = new SKPaint();
+          paint.TextSize = 42.0f;
+          paint.IsAntialias = true;
+          paint.Color = SKColors.White;
+          paint.IsStroke = false;
+          paint.TextAlign = SKTextAlign.Center;
+          paint.Typeface = SKTypeface.FromFamilyName("Arial");
+          //draw the text for the company name
+          canvas.DrawText(i.GetCompanyName(), BADGE_WIDTH /2f, COMPANY_NAME_Y, paint);
+          // make the employee name black and draw text
+          paint.Color = SKColors.Black;
+          canvas.DrawText(i.GetFullName(), BADGE_WIDTH / 2f, EMPLOYEE_NAME_Y, paint);
+          // make the employee id font Courier New and draw text
+          paint.Typeface = SKTypeface.FromFamilyName("Courier New");
+          canvas.DrawText(i.GetId().ToString(), BADGE_WIDTH / 2f, EMPLOYEE_ID_Y, paint);
+          
+          //final image
           SKImage finalImage = SKImage.FromBitmap(badge);
           SKData data = finalImage.Encode();
-          data.SaveTo(File.OpenWrite("data/employeeBadge.png"));
-
-          // how we'll see if the file was actually written
-          //SKData data = background.Encode();
-          //data.SaveTo(File.OpenWrite("data/employeeBadge.png"));
+          string template = "data/{0}_badge.png";
+          data.SaveTo(File.OpenWrite(string.Format(template, i.GetId())));
         }
       }
       
