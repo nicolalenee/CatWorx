@@ -32,5 +32,5 @@ If a user wants to manually enter in employee information they will be prompted 
 *purrrr*fect.
 
 ## Questions?
-Email: marblenicola@gmail.com
+Email: marblenicola@gmail.com  
 Repository: https://github.com/nicolalenee/CatWorx
