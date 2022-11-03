@@ -122,5 +122,4 @@ async public static Task MakeBadges(List<Employee> employees)
     }
 ```
 ## Questions?
-Email: marblenicola@gmail.com  
-Repository: https://github.com/nicolalenee/CatWorx
+[Repository](https://github.com/nicolalenee/CatWorx)
