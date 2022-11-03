@@ -53,7 +53,7 @@ SkiaSharp was a huge player in creating the badges. For this project we wielded 
 
 The most important features that we used were SKBitmap, SKData, SKCanvas, SKImage, and SKPaint.
 
-For brevity's sake, the import steps are outlined below in general terms followed by the code snippeet.
+For brevity's sake, the most importantt steps are outlined below --in general terms-- followed by the code snippeet.
 
 * use HttpClient class to import the employee data from the employee list asynchronously,
 * Convert the employee image for the badge into an SKImage,
